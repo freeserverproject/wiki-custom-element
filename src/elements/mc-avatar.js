@@ -1,13 +1,14 @@
 class McAvatar extends HTMLElement {
 	constructor () {
 		super();
+		this.style.display = 'inline-block';
 		var shadow = this.attachShadow({mode: 'open'});
 
 		this.img = document.createElement('img');
 		this.img.loading = 'lazy';
 
 		const style = document.createElement('style');
-		style.textContent = this.style;
+		style.textContent = this._style;
 
 		shadow.appendChild(style);
 		shadow.appendChild(this.img);
@@ -15,8 +16,12 @@ class McAvatar extends HTMLElement {
 	}
 
 	render () {
-		this.img.width = this.getAttribute('width') || '32';
-		this.img.height = this.getAttribute('height') || '32';
+		const defWidth = this.getAttribute('width') || 32;
+		const defheight = this.getAttribute('height') || 32;
+		this.style.width = `${defWidth}px`;
+		this.style.height = `${defheight}px`;
+		this.img.width = defWidth;
+		this.img.height = defheight;
 		this.img.src = this.formatAvatarURL(this.getAttribute('user'), this.getAttribute('type')||'helm');
 	}
 
@@ -31,7 +36,7 @@ class McAvatar extends HTMLElement {
 		this.render();
 	}
 
-	get style () {
+	get _style () {
 		return `
 			img {
 				image-rendering: pixelated;
