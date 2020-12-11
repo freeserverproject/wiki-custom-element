@@ -2,6 +2,8 @@ class McAvatar extends HTMLElement {
 	constructor () {
 		super();
 		this.style.display = 'inline-block';
+		this.style.verticalAlign = 'middle';
+
 		var shadow = this.attachShadow({mode: 'open'});
 
 		this.img = document.createElement('img');
