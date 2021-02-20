@@ -24,7 +24,7 @@ class McAvatar extends HTMLElement {
 		this.style.height = `${defheight}px`;
 		this.img.width = defWidth;
 		this.img.height = defheight;
-		this.img.src = this.formatAvatarURL(this.getAttribute('user'), this.getAttribute('type')||'helm');
+		this.img.src = this.formatAvatarURL(this.getAttribute('user'), this.getAttribute('type')||'avatar');
 	}
 
 	connectedCallback () {
