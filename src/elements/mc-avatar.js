@@ -51,7 +51,7 @@ class McAvatar extends HTMLElement {
 	}
 
 	formatAvatarURL (user='steve', type='avatar') {
-		return `https://crafatar.com/${type}/${user}?size=32`;
+		return `https://crafatar.com/${type}/${user}?size=16&overlay`;
 	}
 }
 
