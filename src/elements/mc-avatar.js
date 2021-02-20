@@ -50,8 +50,8 @@ class McAvatar extends HTMLElement {
 		return ['user', 'type', 'width', 'height'];
 	}
 
-	formatAvatarURL (user='steve', type='helm') {
-		return `https://minotar.net/${type}/${user}/16.png`;
+	formatAvatarURL (user='steve', type='avatar') {
+		return `https://crafatar.com/${type}/${user}?size=32`;
 	}
 }
 
